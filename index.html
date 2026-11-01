@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#eceae4"><title>从家出发 · 衣柜整理灰盒</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main class="game">
+  <header><div><p class="eyebrow">从家出发 / 可玩灰盒 01</p><h1>把日子，放顺手。</h1></div><span class="badge">衣柜整理</span></header>
+  <section id="intro" class="intro"><h2>出门前，整理一小格生活</h2><p>常穿的放下层，换季盒放上层。想留下的、待处理的，也各有去处。</p><p>点物品查看，再点位置放下。没有倒计时，也不用拖动。</p><button id="start" class="primary">开始整理</button></section>
+  <div id="play" hidden>
+    <details class="goals" open><summary>今天的小目标 <span id="progress"></span></summary><ul id="goals"></ul></details>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <section class="cabinet" aria-label="衣柜"><div class="shelf-heading"><h2>上层 · 换季区</h2><span>3格</span></div><div id="upper" class="shelf upper"></div><div class="shelf-heading"><h2>下层 · 常用区</h2><span>4格</span></div><div id="lower" class="shelf lower"></div><p class="caption">空格可以直接点；移动已有物品，先点它查看。</p></section>
+    <section class="pending" aria-label="待处理区"><button data-target="repair">修补篮<span id="repair"></span></button><button data-target="donate">待转赠<span id="donate"></span></button></section>
+    <section class="mat"><div class="shelf-heading"><h2>整理垫</h2><span id="mat-count"></span></div><div id="mat" class="items"></div></section>
+    <section class="inspector" aria-label="选中物品详情"><div id="detail"></div><div id="modes"></div><button id="return" hidden>退回整理垫</button></section>
+    <nav class="tools" aria-label="整理工具"><button id="undo">撤销一步</button><button id="help">看看指南</button><button id="reset">重新整理</button></nav>
+    <p id="saved" class="caption"></p>
+    <footer>点击观察 · 自由尝试 · 随时停下来</footer>
+  </div>
+</main>
+<dialog id="guide"><h2>整理指南</h2><p id="help-text"></p><div class="dialog-actions"><button id="help-next">再具体一点</button><button id="demo" hidden>预览示范方案</button><button id="guide-close" class="primary">继续整理</button></div><div id="demo-preview" hidden><p>上层：围巾＋换季盒<br>下层：上衣＋长裤＋挂放开衫<br>待处理：外套分别放入修补、转赠处</p><p>确认后会采用这套安排；也可以撤销。</p><button id="demo-confirm">采用这套示范</button><button id="demo-cancel">先自己试试</button></div></dialog>
+<dialog id="confirm"><h2>重新整理？</h2><p>将回到最初的衣柜状态。</p><div class="dialog-actions"><button id="reset-cancel">继续当前进度</button><button id="reset-confirm" class="primary">重新开始</button></div></dialog>
+<dialog id="finish"><p class="eyebrow">今天的生活便签</p><h2>常穿的顺手了，<br>想留下的也安顿好了。</h2><p>今天，把常穿的衣物放顺手了。</p><p class="caption">这只是衣柜的一小部分。两种收纳方式，都可以很好。</p><div class="dialog-actions"><button id="finish-view" class="primary">看看整理好的柜子</button><button id="finish-reset">再整理一次</button><button id="finish-end">结束体验</button></div></dialog>
+<script src="logic.js"></script><script src="app.js"></script>
+</body></html>
